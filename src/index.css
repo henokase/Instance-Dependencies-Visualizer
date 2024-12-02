@@ -4,17 +4,21 @@
 
 /* Add custom styles for the tables */
 .table-container {
-  @apply flex gap-4 min-h-0;
+  @apply flex flex-col md:flex-row gap-4 min-h-0;
 }
 
 .table-container > div {
-  @apply flex-1 overflow-hidden;
+  @apply w-full md:flex-1 overflow-hidden;
 }
 
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
+  @screen md {
+    width: 8px;
+    height: 8px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -27,5 +31,21 @@
 
 /* Ensure tables don't get too squished */
 table {
-  min-width: 300px;
+  min-width: 280px;
+  @screen md {
+    min-width: 300px;
+  }
+}
+
+/* Responsive text sizes */
+@screen sm {
+  html {
+    font-size: 14px;
+  }
+}
+
+@screen md {
+  html {
+    font-size: 16px;
+  }
 }
